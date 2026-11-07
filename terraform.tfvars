@@ -9,12 +9,14 @@ vms = {
     memory_mb = 4096
     vcpu      = 2
     disk_gb   = 30
+    mac_id    = 1
   }
 
   lab02 = {
     memory_mb = 4096
     vcpu      = 2
     disk_gb   = 30
+    mac_id    = 2
   }
 }
 

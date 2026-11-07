@@ -50,9 +50,16 @@ resource "libvirt_domain" "vm" {
     volume_id = libvirt_volume.os_disk[each.key].id
   }
 
-  network_interface {
-    network_name = var.network_name
-  }
+network_interface {
+  network_name = var.network_name
+
+  mac = format(
+    "02:13:37:%02x:%02x:%02x",
+    floor(each.value.mac_id / 65536),
+    floor(each.value.mac_id / 256) % 256,
+    each.value.mac_id % 256
+  )
+}
 
   console {
     type        = "pty"
