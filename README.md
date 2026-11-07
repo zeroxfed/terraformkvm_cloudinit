@@ -51,7 +51,7 @@ terraform apply
 
 Find each VM IP address:
 ```bash
-virsh -c qemu:///system net-dhcp-leases default
+virsh -c qemu:///system net-dhcp-leases default | grep lab
 ```
 
 Connect: (profit)

@@ -19,6 +19,7 @@ resource "libvirt_volume" "base_image" {
   pool   = var.storage_pool
   source = var.cloud_image_path
   format = "qcow2"
+
 }
 
 resource "libvirt_volume" "os_disk" {
@@ -75,7 +76,7 @@ resource "libvirt_cloudinit_disk" "vm" {
   user_data = "#cloud-config\n${yamlencode({
     groups = ["sudo"]
     users = [{
-      name                = "automation"
+      name                = "pesant"
       groups              = ["sudo"]
       shell               = "/bin/bash"
       sudo                = "ALL=(ALL) NOPASSWD:ALL"
