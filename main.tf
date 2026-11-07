@@ -17,7 +17,7 @@ provider "libvirt" {
 resource "libvirt_volume" "base_image" {
   name   = "terraformkvm-base.qcow2"
   pool   = var.storage_pool
-  source = var.cloud_image_path
+  source = pathexpand(var.cloud_image_path) # Because ~ in paths
   format = "qcow2"
 
 }
