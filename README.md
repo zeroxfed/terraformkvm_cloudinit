@@ -29,17 +29,17 @@ wget https://download.fedoraproject.org/pub/fedora/linux/releases/45/Cloud/x86_6
  
 Find the file:
 ```bash
-ls -lah /home/user/Downloads/*.qcow2
+ls -lah ~/Downloads/*.qcow2
 ```
 
 Open Terraform settings: (vim, because we're not savages)
 ```bash
-vim /home/user/terraformkvm_cloudinit/terraform.tfvars
+vim ~/terraformkvm_cloudinit/terraform.tfvars
 ```
 
 Replace "CLOUD-BASE-FILE" with the actual downloaded filename:
 ```
-cloud_image_path = "/home/user/Downloads/CLOUD-BASE-FILE.qcow2"
+cloud_image_path = "~/Downloads/CLOUD-BASE-FILE.qcow2"
 ```
    
 Review and create the VMs:
@@ -56,7 +56,7 @@ virsh -c qemu:///system net-dhcp-leases default | grep lab
 
 Connect: (profit)
 ```bash
-ssh -i ~/.ssh/id_ed25519 automation@lab01_ip
-ssh -i ~/.ssh/id_ed25519 automation@lab02_ip
+ssh -i ~/.ssh/id_ed25519 pesant@lab01_ip
+ssh -i ~/.ssh/id_ed25519 pesant@lab02_ip
 ```
 
