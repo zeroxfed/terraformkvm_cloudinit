@@ -24,7 +24,7 @@ cd terraformkvm_cloudinit
 
 Download Fedora Cloud Base:
 ```bash
-wget https://download.fedoraproject.org/pub/fedora/linux/releases/45/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-45-1.4.x86_64.qcow2 -o /home/user/Downloads/
+wget https://download.fedoraproject.org/pub/fedora/linux/releases/45/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-45-1.4.x86_64.qcow2 -o ~/Downloads/
 ```
  
 Find the file:
